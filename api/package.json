@@ -1,0 +1,36 @@
+{
+  "scripts": {
+    "dev": "nodemon --inspect=0.0.0.0:9229",
+    "lint": "eslint . --ext .ts,.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.3.0",
+    "@types/node": "^20.4.7",
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jest": "^27.2.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "fastify": "^4.21.0",
+    "fastify-cli": "^5.8.0",
+    "fastify-plugin": "^4.5.1",
+    "graphql": "^16.7.1",
+    "jest": "^29.6.2",
+    "jsonwebtoken": "^9.0.1",
+    "lowdb": "github:dankreiger/lowdb#chore/esm-cjs-hybrid-WITH-LIB",
+    "mercurius": "^13.1.0",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "*",
+    "winston": "^3.10.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "eslint-config-standard-with-typescript": "^37.0.0",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 "
+  }
+}
