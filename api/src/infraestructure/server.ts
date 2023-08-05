@@ -19,8 +19,9 @@ fastify.register(GQL, {
   context: (request) => {
     const header = request.headers.authorization
     const user = tokenVerify(header)
+    
     return {
-      user: {...user}
+      ...user
     }
   }
 })

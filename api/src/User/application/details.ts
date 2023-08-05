@@ -15,7 +15,22 @@ export function UserActions(repository: UserRepository) {
 
   const showInfo = async (id: string): Promise<User | void> => {
     const user = await repository.showDetails(id)
-    return user
+    return {
+      guid: user.guid,
+      isActive: user.isActive,
+      balance: user.balance,
+      picture: user.picture,
+      age: user.age,
+      eyeColor: user.eyeColor,
+      name: {
+        first: user.name.first,
+        last: user.name.last
+      },
+      company: user.company,
+      email: user.email,
+      phone: user.phone,
+      address: user.address
+    }
   }
 
   return {

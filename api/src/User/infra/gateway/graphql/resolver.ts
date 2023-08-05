@@ -7,9 +7,19 @@ import type { UserId, EditDetails } from './types'
 const useCases = UserActions(repository)
 
 export const userResolvers = {
-  showDetails: async (_: unknown, {id}: UserId) => {
-    useCases.showInfo(id)
-    return {id}
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+  showDetails: async (_: unknown, {id}: UserId,  ctx: any) => {
+    try {
+      if (!ctx.user) {
+        throw new Error('Unauthorized. You should login.')
+      }
+  
+      const user = await useCases.showInfo(id)
+      return { ...user }
+    }catch(err){
+      logger.error(err)
+      throw err
+    }
   }
 }
 
@@ -18,7 +28,7 @@ export const userMutationResolver = {
   editDetails: async (_: unknown, {id, data}: EditDetails, ctx: any) => {
     try {
       if (!ctx.user) {
-        throw new Error('No autorizado. Debes iniciar sesión.')
+        throw new Error('Unauthorized. You should login.')
       }
 
       const user = await useCases.update(id, data as User)

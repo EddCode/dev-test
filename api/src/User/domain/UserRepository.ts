@@ -11,7 +11,7 @@ export type User = {
   },
   company: string,
   email: string,
-  password: string,
+  password?: string,
   phone: string,
   address: string
   [key: string | symbol]: unknown;
