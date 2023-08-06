@@ -3,7 +3,7 @@ import { useRef, useState } from 'react'
 
 import { StyledForm } from './Form.styled'
 
-import { useEditUser } from '@/modules/User/infra/gateway/hooks/useEditUser'
+import { useEditUser } from '@/modules/User/infra/gateway'
 
 export function EditUser ({ updateUserData, isActive }) {
   const [payload, setPayload] = useState({})
@@ -27,7 +27,6 @@ export function EditUser ({ updateUserData, isActive }) {
     payload.isActive = $form.current[0].checked
 
     setPayload(payload)
-    setWasSubmitted(false)
   }
 
   return (

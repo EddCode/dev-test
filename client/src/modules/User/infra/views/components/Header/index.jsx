@@ -18,7 +18,7 @@ export function Header ({ picture, toogleShowBalance, toogleOpenForm }) {
 }
 
 Header.propTypes = {
-  picture: PropTypes.string.isRequired,
+  picture: PropTypes.string,
   toogleShowBalance: PropTypes.func.isRequired,
   toogleOpenForm: PropTypes.func.isRequired
 }

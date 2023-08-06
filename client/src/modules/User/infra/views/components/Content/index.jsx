@@ -23,12 +23,12 @@ export function Content ({
 }
 
 Content.propTypes = {
-  address: PropTypes.string.isRequired,
-  age: PropTypes.number.isRequired,
-  balance: PropTypes.string.isRequired,
-  company: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  eyeColor: PropTypes.string.isRequired,
-  isActive: PropTypes.bool.isRequired,
-  phone: PropTypes.string.isRequired
+  address: PropTypes.string,
+  age: PropTypes.number,
+  balance: PropTypes.string,
+  company: PropTypes.string,
+  email: PropTypes.string,
+  eyeColor: PropTypes.string,
+  isActive: PropTypes.bool,
+  phone: PropTypes.string
 }
