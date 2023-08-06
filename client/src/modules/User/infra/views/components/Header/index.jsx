@@ -2,15 +2,16 @@ import PropTypes from 'prop-types'
 
 import { StyledProfileButtonContainerDiv, StyledProfileDiv, StyledProfileFIGURE, StyledProfileIMG } from './Header.style'
 
-export function Header ({ picture, toogleShowBalance }) {
+const defaultUrl = 'https://i.stack.imgur.com/l60Hf.png'
+export function Header ({ picture, toogleShowBalance, toogleOpenForm }) {
   return (
     <StyledProfileDiv>
       <StyledProfileFIGURE>
-        <StyledProfileIMG src={picture} alt="user profile image" />
+        <StyledProfileIMG src={picture?.startsWith('http') ? picture : defaultUrl } alt="user profile image" />
       </StyledProfileFIGURE>
       <StyledProfileButtonContainerDiv>
         <button onClick={toogleShowBalance}>Balance</button>
-        <button>Edit</button>
+        <button onClick={toogleOpenForm}>Edit</button>
       </StyledProfileButtonContainerDiv>
     </StyledProfileDiv>
   )
@@ -18,5 +19,6 @@ export function Header ({ picture, toogleShowBalance }) {
 
 Header.propTypes = {
   picture: PropTypes.string.isRequired,
-  toogleShowBalance: PropTypes.func.isRequired
+  toogleShowBalance: PropTypes.func.isRequired,
+  toogleOpenForm: PropTypes.func.isRequired
 }
