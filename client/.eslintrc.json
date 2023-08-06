@@ -40,6 +40,25 @@
               ],
               "newlines-between": "always"
           }
+      ],
+      "react/sort-comp": [
+        "error",
+        {
+          "order": [
+            "state",
+            "instance-variables",
+            "static-methods",
+            "lifecycle",
+            "everything-else",
+            "render"
+          ],
+          "groups": {
+            "state": ["useState"],
+            "instance-variables": ["useRef"],
+            "lifecycle": ["useEffect"],
+            "everything-else": ["custom-hooks", "other-hooks"]
+          }
+        }
       ]
   }
 }
